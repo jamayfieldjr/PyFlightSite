@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">&nbsp;</div>
+
+<div class="row">
+  <div class="col-sm-9 col-sm-offset-1">
+    <a class="h3" href="/">Back to Home</a>
+  </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">NODM List For {{nodm}}</div>
+      <div class="list-group">
+        {% for item in data %}
+          <div class="list-group-item">{{item}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

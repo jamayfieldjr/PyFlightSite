@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="row">
+  <div class="col-md-offset-1 h1 col-xs-offset-1">NODM Search</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-1 col-xs-offset-1 col-xs-9">
+    {% if errors['nodm_error'] %}
+      <div style='color: red; padding: 5px;'>{{errors['nodm_error']}}</div>
+    {% endif %}
+      <form method='get', action="SearchNodm">
+        <div class="form-group">
+          <label for='nodm'>Enter NODM</label>
+          <input class="form-control" type='text' name='nodm'/>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-default" type='submit'>Search</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-1 h1 col-xs-offset-1">Compute ETA</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-1 col-xs-offset-1 col-xs-9">
+    <form method='get', action="ConvertTime">
+      <div class="form-group">
+        <label for='DepTime'>Departure Time</label>
+        <input class="form-control" type='text' name='DepTime'/>
+      </div>
+      <div class="form-group">
+        <label for='ETE'>ETE</label>
+        <input class="form-control" type='text' name='ETE'/>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" type='submit'>Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
